@@ -1,15 +1,21 @@
 {
     "dashscope_api_key": {
         "type": "string",
-        "description": "阿里云百炼的api key",
-        "hint": "需要有调用qwen-turbo的能力",
+        "description": "阿里云百炼的 API KEY，需要能够调用语言模型",
+        "hint": "阿里云百炼：https://bailian.console.aliyun.com/#/home",
         "default": ""
     },
     "qweather_api_key": {
         "type": "string",
-        "description": "和风天气的api key",
-        "hint": "需要在官网获取一个"
+        "description": "和风天气的 API KEY，需要在官网获取一个",
+        "hint": "和风天气控制台：https://console.qweather.com/home?lang=zh",
         "default": ""
+    },
+    "model_name": {
+        "type": "string",
+        "description": "模型名称",
+        "hint": "使用这个语言模型来从用户输入中提取地区的名字，请在阿里云百炼开通它",
+        "default": "qwen-turbo"
     },
     "wake_msg": {
         "type": "string",
@@ -19,7 +25,7 @@
     },
     "history_access": {
         "type": "bool",
-        "description": "是否让AI结合上下文判断地区名称",
+        "description": "是否让 AI 结合上下文判断地区名称",
         "hint": "未完工，当前无效",
         "default": false
     }
