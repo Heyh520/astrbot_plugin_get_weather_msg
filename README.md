@@ -1,9 +1,3 @@
-# helloworld
+# 查询天气
 
-AstrBot 插件模板
-
-A template plugin for AstrBot plugin feature
-
-# 支持
-
-[帮助文档](https://astrbot.app)
+通过和风天气api和阿里云百炼，在检测到聊天消息中出现特定文本时生成一张某地的12小时天气预报图
