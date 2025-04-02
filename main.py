@@ -257,6 +257,7 @@ class Main(Star):
                 im = im.convert('RGB')
                 im.save(img_path_jpg, quality=95)
                 chain = [
+                    Plain(f"这是{location}在12小时内的天气。"),
                     Image.fromFileSystem(img_path_jpg),
                 ]
 
