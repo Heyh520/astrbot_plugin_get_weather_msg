@@ -195,10 +195,23 @@ class Main(Star):
                 # ======================
                 # 天气图标映射字典
                 weather_icons = {
-                    '晴': os.path.join(plugin_dir, "sunny.png"),
-                    '雨': os.path.join(plugin_dir, "rainy.png"),
-                    '多云': os.path.join(plugin_dir, "cloudy.png"),
-                    '雪': os.path.join(plugin_dir, "snowy.png")
+                    '晴': os.path.join(plugin_dir, "icons", "sunny.png"),
+                    '雨': os.path.join(plugin_dir, "icons", "rainy.png"),
+                    '大雨': os.path.join(plugin_dir, "icons", "rainy.png"),
+                    '小雨': os.path.join(plugin_dir, "icons", "rainy.png"),
+                    '中雨': os.path.join(plugin_dir, "icons", "rainy.png"),
+                    '多云': os.path.join(plugin_dir, "icons", "partly_cloudy.png"),
+                    '局部多云': os.path.join(plugin_dir, "icons", "partly_cloudy.png"),
+                    '大部多云': os.path.join(plugin_dir, "icons", "partly_cloudy.png"),
+                    '雪': os.path.join(plugin_dir, "icons", "snowy.png"),
+                    '大雪': os.path.join(plugin_dir, "icons", "snowy.png"),
+                    '小雪': os.path.join(plugin_dir, "icons", "snowy.png"),
+                    '中雪': os.path.join(plugin_dir, "icons", "snowy.png"),
+                    '阴': os.path.join(plugin_dir, "icons", "cloudy.png"),
+                    '风': os.path.join(plugin_dir, "icons", "windy.png"),
+                    '大风': os.path.join(plugin_dir, "icons", "windy.png"),
+                    '雾': os.path.join(plugin_dir, "icons", "foggy.png"),
+                    '大雾': os.path.join(plugin_dir, "icons", "foggy.png"),
                 }
 
                 def load_weather_icon(text):
