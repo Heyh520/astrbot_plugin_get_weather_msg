@@ -15,8 +15,9 @@ import matplotlib.font_manager as fm
 from matplotlib.offsetbox import OffsetImage, AnnotationBbox
 from scipy.interpolate import make_interp_spline
 from openai import OpenAI
+from PIL import Image as ImageW
 
-@register("astrbot_plugin_get_weather", "whzc", "获取12小时的天气并生成一张图片", "1.0.0", "repo url")
+@register("astrbot_plugin_get_weather", "whzc", "获取12小时的天气并生成一张图片", "1.1.0", "repo url")
 
 class Main(Star):
     def __init__(self, context: Context, config: dict):
@@ -244,16 +245,22 @@ class Main(Star):
                 
                 # 保存图像
                 session_id = event.unified_msg_origin.replace(":","")   # 获取session_id并删掉文件系统不兼容的符号 
-                img_path = os.path.join(plugin_dir, f"{session_id}_weather.png")
-                plt.savefig(img_path, dpi=300, bbox_inches='tight')
+                img_path_png = os.path.join(plugin_dir, f"{session_id}_weather.png")
+                img_path_jpg = os.path.join(plugin_dir, f"{session_id}_weather.jpg")
+                plt.savefig(img_path_png, dpi=300, bbox_inches='tight')
                 plt.close()
 
                 logger.info(f"astrbot_plugin_get_weather 已生成“{location}”的天气图片。")
                 logger.info(f"这是天气情况：{weather_texts}")
+
+                im = ImageW.open(img_path_png)
+                im = im.convert('RGB')
+                im.save(img_path_jpg, quality=95)
                 chain = [
-                        Plain(f"这是{location}的12小时内天气。"),
-                        Image.fromFileSystem(img_path),
-                    ]
+                    Image.fromFileSystem(img_path_jpg),
+                ]
+
                 yield event.chain_result(chain)
 
-                os.remove(img_path)
+                os.remove(img_path_png)
+                os.remove(img_path_jpg)
