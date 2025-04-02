@@ -1,0 +1,24 @@
+{
+    "dashscope_api_key": {
+        "type": "string",
+        "description": "阿里云百炼的api key，需要有调用qwen-turbo的能力",
+        "default": ""
+    },
+    "qweather_api_key": {
+        "type": "string",
+        "description": "和风天气的api key，需要在官网获取一个",
+        "default": ""
+    },
+    "wake_msg": {
+        "type": "string",
+        "description": "唤醒词，当聊天内容以它开头时插件就会运行",
+        "hint": "可以设置多个，用“&&”分隔开",
+        "default": "天气&&查询天气"
+    },
+    "history_access": {
+        "type": "bool",
+        "description": "是否让AI结合上下文判断地区名称",
+        "hint": "未完工，当前无效",
+        "default": false
+    }
+}
