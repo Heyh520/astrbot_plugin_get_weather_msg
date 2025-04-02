@@ -1,12 +1,14 @@
 {
     "dashscope_api_key": {
         "type": "string",
-        "description": "阿里云百炼的api key，需要有调用qwen-turbo的能力",
+        "description": "阿里云百炼的api key",
+        "hint": "需要有调用qwen-turbo的能力",
         "default": ""
     },
     "qweather_api_key": {
         "type": "string",
-        "description": "和风天气的api key，需要在官网获取一个",
+        "description": "和风天气的api key",
+        "hint": "需要在官网获取一个"
         "default": ""
     },
     "wake_msg": {
