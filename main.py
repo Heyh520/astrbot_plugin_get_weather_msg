@@ -17,7 +17,7 @@ from scipy.interpolate import make_interp_spline
 from openai import OpenAI
 from PIL import Image as ImageW
 
-@register("astrbot_plugin_get_weather", "whzc", "获取12小时的天气并生成一张图片", "1.1.0", "repo url")
+@register("astrbot_plugin_get_weather", "whzc", "获取12小时的天气并生成一张图片", "1.2.0", "repo url")
 
 class Main(Star):
     def __init__(self, context: Context, config: dict):
