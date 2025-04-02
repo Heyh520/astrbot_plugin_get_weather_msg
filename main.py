@@ -17,7 +17,7 @@ from scipy.interpolate import make_interp_spline
 from openai import OpenAI
 from PIL import Image as ImageW
 
-@register("astrbot_plugin_get_weather_msg", "whzc", "获取12小时的天气并生成一张图片", "1.2.0", "repo url")
+@register("astrbot_plugin_get_weather", "whzc", "获取12小时的天气并生成一张图片", "1.1.0", "repo url")
 
 class Main(Star):
     def __init__(self, context: Context, config: dict):
@@ -29,9 +29,9 @@ class Main(Star):
         self.dashscope_api_key = self.config.get("dashscope_api_key", "")
         self.qweather_api_key = self.config.get("qweather_api_key", "")
         self.wake_msg = self.config.get("wake_msg", "天气&&查询天气").split("&&")
+        self.model_name = self.config.get("model_name", "qwen-turbo")
         self.history_access = bool(self.config.get("history_access", False))
-
-
+        
     @event_message_type(EventMessageType.ALL)
     async def on_message(self, event: AstrMessageEvent):
         msg = event.get_message_str()
@@ -44,7 +44,7 @@ class Main(Star):
                 base_url="https://dashscope.aliyuncs.com/compatible-mode/v1",
             )
                 completion = client.chat.completions.create(
-                    model="qwen-turbo",
+                    model=self.model_name,
                     messages=[
                         {'role': 'system', 'content': '1.你需要提取用户输入中的地区名，只需要回复地区名，不要回复其他内容。2.只需要回复到“区”的级别。例如，用户说“你好，广州的天气怎么样”，你就要回复“广州”；用户说“广州白云区东风西路的天气怎么样”，你就要回复“广州白云区”而不是“广州白云区东风西路”\n3.如果用户询问了某个景区的名字，请结合你的经验猜测它应该在哪个地方，如用户说“中央大街”，你就回复“哈尔滨道里区”，如果你不知道，直接回复景区名字即可\4.没有则回复“无”'},
                         {'role': 'user', 'content': user_input}],
