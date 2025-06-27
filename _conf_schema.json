@@ -28,5 +28,17 @@
         "description": "是否让 AI 结合上下文判断地区名称",
         "hint": "未完工，当前无效",
         "default": false
+    },
+    "ai_base_url": {
+        "type": "string",
+        "description": "AI API 的基础 URL",
+        "hint": "支持自定义 AI API 地址，如 OpenAI 兼容接口",
+        "default": "https://dashscope.aliyuncs.com/compatible-mode/v1"
+    },
+    "qweather_api_base_url": {
+        "type": "string",
+        "description": "你的和风天气 host API",
+        "hint": "支持自定义和风天气 API 地址",
+        "default": "geoapi.qweather.com"
     }
 }
