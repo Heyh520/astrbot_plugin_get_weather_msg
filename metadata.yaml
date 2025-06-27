@@ -1,6 +1,7 @@
 name: astrbot_plugi_get_weather_msg # 这是你的插件的唯一识别名。
-desc: 集成了 AI 功能。通过和风天气 API 和阿里云百炼，在检测到聊天消息中出现特定文本时生成一张某地的12小时天气预报图 # 插件简短描述
+desc: 集成了 AI 功能。通过和风天气 API 和阿里云百炼，支持基于历史记录的智能城市识别，在检测到聊天消息中出现特定文本时生成一张某地的12小时天气预报图 # 插件简短描述
 help: 见Github页 # 插件的帮助信息
-version: v1.2.0 # 插件版本号。格式：v1.1.1 或者 v1.1
+version: v1.3.0 # 插件版本号。格式：v1.1.1 或者 v1.1
 author: whzc # 作者
+contributors: Heyh520 # 贡献者
 repo: https://github.com/whzcc/astrbot_plugin_get_weather_msg # 插件的仓库地址
