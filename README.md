@@ -19,7 +19,7 @@
 4. 在聊天中询问天气信息：
    - 简单查询："天气 北京今天怎么样？"（返回文字回复）
    - 详细预报："天气 北京12小时天气趋势如何？"（生成预报图）
-   - 智能识别：如果聊天历史中提到过位置，可直接问"明天天气怎么样？"
+   - 智能识别：如果聊天历史中提到过位置，可直接问"明天天气怎么样？"，也可以直接询问具体位置的天气"北京天气怎么样？"
 
 图标作者为[星星峡的星星](https://www.iconfont.cn/user/detail?spm=a313x.search_index.0.d214f71f6.5af93a81LJ6prx&uid=353865&nid=zc3yXUmxY95I)和[_bzl](https://www.iconfont.cn/user/detail?spm=a313x.search_index.0.d214f71f6.5af93a81LJ6prx&uid=3937395&nid=8XMWPvgdm6bh)。
 
