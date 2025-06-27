@@ -20,14 +20,14 @@
     "wake_msg": {
         "type": "string",
         "description": "唤醒词，当聊天内容以它开头时插件就会运行",
-        "hint": "可以设置多个，用“&&”分隔开",
+        "hint": "可以设置多个，用“&&”分隔开,可忽视，现在AI智能识别",
         "default": "天气&&查询天气"
     },
     "history_access": {
         "type": "bool",
         "description": "是否让 AI 结合上下文判断地区名称",
-        "hint": "未完工，当前无效",
-        "default": false
+        "hint": "打开启用上下文检索，AI 将会结合聊天历史来判断用户询问的地区名称",
+        "default": true
     },
     "ai_base_url": {
         "type": "string",
